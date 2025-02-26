@@ -89,7 +89,7 @@ Esta lista representa el **orden óptimo** para visitar todas las ciudades, gara
 ---
 
 ## 📊 **Interpretación del Gráfico**
-![Gráfico de Ruta Óptima](enlace_al_grafico.png)
+![Gráfico de Ruta Óptima](images\ruta_optima.png)
 - **Puntos Rojos**: Ciudades (coordenadas geográficas).
 - **Línea Azul Punteada**: Trayectoria óptima (`'b--'` en matplotlib).
 - **Dirección**: Flecha implícita en el orden de la lista (sigue el sentido del arreglo `ruta_optima`).
@@ -98,8 +98,19 @@ Esta lista representa el **orden óptimo** para visitar todas las ciudades, gara
 
 ## 🛠️ **Cómo se Genera**
 ```python
-# Ejemplo de código para graficar
-plt.scatter(coordenadas[:,0], coordenadas[:,1], c='red', label='Ciudades')
-plt.plot(coordenadas[ruta_optima,0], coordenadas[ruta_optima,1], 'b--', label='Ruta Óptima')
-plt.plot([coordenadas[ruta_optima[-1],0], coordenadas[ruta_optima[0],0]], 
-         [coordenadas[ruta_optima[-1],1], [coordenadas[ruta_optima[0],1]], 'b--')  # Cierre del ciclo 
+# Cargar librerias
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Carga coordenadas en  un DataFrame a partir de un archivo csv. 
+df = pd.read_csv('path/file.csv')
+coordenadas = df[['x', 'y']].values    # Carga las coordenadas en un array de numpy
+
+# Calcula distancia la ruta óptima, determina la distancia mínima y devuelve la evolución
+# Hacer uso de las funciones que encontrará en el notebook TSP.ipynb
+ruta_optima, distancia_optima, evolucion = recocido_simulado(coordenadas)
+
+# Generar los gráficos necesarios
+plt.figure(figsize=(8, 8))
+plt.scatter(coordenadas[:, 0], coordenadas[:, 1], color='red', label..............
