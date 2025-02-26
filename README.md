@@ -64,7 +64,7 @@ Este comportamiento se ilustra en el siguiente gráfico de evolución, donde se 
 - Reducción consistente de la longitud de ruta conforme disminuye la temperatura
 - Estabilización en un valor mínimo (explotación del óptimo identificado)
 
-![Evolución de la distancia durante el recocido simulado](images\evolucion_algoritmo.png)  
+![Evolución de la distancia durante el recocido simulado](images/evolucion_algoritmo.png)  
 *Progreso típico del algoritmo: de soluciones caóticas a rutas optimizadas.*
 
 ## Solución de Ruta Óptima
@@ -89,7 +89,7 @@ Esta lista representa el **orden óptimo** para visitar todas las ciudades, gara
 ---
 
 ## 📊 **Interpretación del Gráfico**
-![Gráfico de Ruta Óptima](images\ruta_optima.png)
+![Gráfico de Ruta Óptima](images/ruta_optima.png)
 - **Puntos Rojos**: Ciudades (coordenadas geográficas).
 - **Línea Azul Punteada**: Trayectoria óptima (`'b--'` en matplotlib).
 - **Dirección**: Flecha implícita en el orden de la lista (sigue el sentido del arreglo `ruta_optima`).
